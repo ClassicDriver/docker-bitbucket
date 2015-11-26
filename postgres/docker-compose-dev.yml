@@ -1,0 +1,10 @@
+db:
+  image: classicdriver/postgres:9.4
+  ports:
+    - "5432:5432"
+  volumes_from:
+    - data
+data:
+  image: busybox
+  volumes:
+    - /var/lib/postgresql/data
