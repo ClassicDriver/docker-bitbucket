@@ -13,8 +13,8 @@ MAINTAINER Team Nitrous <nitrous@classicdriver.com>
 # Try to limit the number of RUN instructions to minimise the number of layers that will need to be created.
 RUN echo "deb http://http.debian.net/debian wheezy-backports main" >/etc/apt/sources.list.d/wheezy-backports.list \
     && apt-get update -qq \
-    && apt-get -t wheezy-backports install -y -qq git \
-    && apt-get install -y --no-install-recommends libtcnative-1 \
+    && DEBIAN_FRONTEND=noninteractive apt-get -t wheezy-backports install -y -qq git \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libtcnative-1 \
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
