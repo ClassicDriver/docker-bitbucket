@@ -5,6 +5,12 @@ web:
     - "7999:7999"
   volumes_from:
     - data
+  links:
+    - db:db
+
+db:
+  image: classicdriver/postgres:9.4
+
 data:
   image: classicdriver/debian-wheezy-bitbucket-data
   volumes:
