@@ -1,0 +1,11 @@
+web:
+  image: classicdriver/debian-wheezy-bitbucket4.1.0
+  ports:
+    - "7990:7990"
+    - "7999:7999"
+  volumes_from:
+    - data
+data:
+  image: classicdriver/debian-wheezy-bitbucket-data
+  volumes:
+    - /data/:/var/bitbucket_home

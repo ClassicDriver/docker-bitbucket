@@ -1,0 +1,47 @@
+= Bitbucket Server (Debian "Wheezy" Docker Image)
+
+== Introduction
+ClassicDriver Bitbucket Server Docker container.
+Our docker implementation of Bitbucket consist of the following two docker images:
+
+. classicdriver/debian-wheezy-bitbucket-data
++
+A data-volume container
+. classicdriver/debian-wheezy-bitbucket-web<BITBUCKET-VERSION>
++
+The main bitbucket container
+
+== How to BUILD this image
+. Clone the Git repository
++
+....
+git clone http://<git.host>/docker-debian-wheezy-bitbucket.git
+....
+. Browse to the folder of the cloned repository
++
+....
+cd docker-debian-wheezy-bitbucket
+....
+. Build the data-volume docker image with the command
++
+....
+docker build --rm=true --tag=classicdriver/debian-wheezy-bitbucket-data data/.
+....
+. Build the web application docker image with the command
++
+....
+docker build --rm=true --tag=classicdriver/debian-wheezy-bitbucket4.1.0 web/.
+....
+. Test the docker images by running
++
+....
+docker-compose -f docker-compose-dev.yml up -d
+....
+. Verify correct setup with a browser by going to
+....
+http://<docker-machine-ip>:7990
+....
+. Stop and Remove the containers
+....
+docker-compose stop && docker-compose rm -v -f
+....
