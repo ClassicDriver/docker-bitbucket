@@ -8,4 +8,4 @@ web:
 data:
   image: classicdriver/debian-wheezy-bitbucket-data
   volumes:
-    - ./datavalume:/var/bitbucket_home
+    - ./datavolume:/var/bitbucket_home
