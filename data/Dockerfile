@@ -5,9 +5,7 @@ FROM classicdriver/debian-wheezy-base
 
 MAINTAINER Team Nitrous <nitrous@classicdriver.com>
 
-# Use the default unprivileged account. This could be considered bad practice
-# on systems where multiple processes end up being executed by 'daemon' but
-# here we only ever run one process anyway.
+# Bitbucket User
 ENV RUN_USER            bitbucket
 
 # https://confluence.atlassian.com/display/BitbucketServer/Bitbucket+Server+home+directory
