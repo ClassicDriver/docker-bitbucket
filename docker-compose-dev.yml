@@ -1,5 +1,11 @@
+data:
+  build: data
+  volumes:
+    - ./datavolume:/var/bitbucket_home
+db:
+  build: postgres
 web:
-  image: classicdriver/debian-wheezy-bitbucket:4.1.0
+  build: web
   ports:
     - "7990:7990"
     - "7999:7999"
@@ -7,11 +13,3 @@ web:
     - data
   links:
     - db:db
-
-db:
-  image: classicdriver/postgres:9.4
-
-data:
-  image: classicdriver/debian-wheezy-bitbucket-data
-  volumes:
-    - ./datavolume:/var/bitbucket_home
