@@ -3,7 +3,7 @@ data:
   volumes:
     - /data/docker/volumes/atlassian/bitbucket:/var/bitbucket_home
 db:
-  image: classicdriver/bitbucket-data
+  image: classicdriver/bitbucket-postgres
 web:
   image: classicdriver/debian-wheezy-bitbucket:4.1.0
   ports:
