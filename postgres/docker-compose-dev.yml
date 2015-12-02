@@ -1,5 +1,5 @@
-db:
-  image: classicdriver/postgres:9.4
+postgres:
+  build: .
   ports:
     - "5432:5432"
   volumes_from:

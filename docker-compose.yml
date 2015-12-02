@@ -1,11 +1,11 @@
 data:
-  image: classicdriver/debian-wheezy-bitbucket-data
+  image: classicdriver/bitbucket-data
   volumes:
     - /data/docker/volumes/atlassian/bitbucket:/var/bitbucket_home
 db:
   image: classicdriver/bitbucket-postgres
 web:
-  image: classicdriver/debian-wheezy-bitbucket:4.1.0
+  image: classicdriver/bitbucket:4.1.0
   ports:
     - "7990:7990"
     - "7999:7999"
