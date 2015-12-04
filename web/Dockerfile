@@ -1,5 +1,5 @@
 ##########################################################################################
-# ClassicDriver Docker image with Bitbucket installed (version 3.x)
+# ClassicDriver Docker image with Bitbucket
 ##########################################################################################
 FROM classicdriver/java:1.8.60
 
