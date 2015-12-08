@@ -1,16 +1,16 @@
-= Bitbucket Server (Debian "Wheezy" Docker Image)
+= Bitbucket Server (Docker Image)
 
 == Introduction
 ClassicDriver Bitbucket Server Docker container.
 Our docker implementation of Bitbucket consist of the following three docker images:
 
-. classicdriver/debian-wheezy-bitbucket-data
+. classicdriver/bitbucket-data
 +
 A data-volume container
-. classicdriver/debian-wheezy-bitbucket-web:<BITBUCKET-VERSION>
+. classicdriver/bitbucket:<BITBUCKET-VERSION>
 +
 The main bitbucket container
-. classicdriver/postgres:9.4
+. classicdriver/bitbucket-postgres:9.4
 +
 The Postgres database
 
@@ -18,27 +18,27 @@ The Postgres database
 . Clone the Git repository
 +
 ....
-git clone http://<git.host>/docker-debian-wheezy-bitbucket.git
+git clone http://<git.host>/docker-bitbucket.git
 ....
 . Browse to the folder of the cloned repository
 +
 ....
-cd docker-debian-wheezy-bitbucket
+cd docker-bitbucket
 ....
 . Build the data-volume docker image with the command
 +
 ....
-docker build --rm=true --tag=classicdriver/debian-wheezy-bitbucket-data data/.
+docker build --rm=true --tag=classicdriver/bitbucket-data data/.
 ....
 . Build the web application docker image with the command
 +
 ....
-docker build --rm=true --tag=classicdriver/debian-wheezy-bitbucket:4.1.0 web/.
+docker build --rm=true --tag=classicdriver/bitbucket:4.1.0 web/.
 ....
 . Build the Postsgres docker image with the command
 +
     
-docker build --rm=true --tag=classicdriver/postgres:9.4 postgres/
+docker build --rm=true --tag=classicdriver/bitbucket-postgres:9.4 postgres/
     
 . Test the docker images by running
 +
